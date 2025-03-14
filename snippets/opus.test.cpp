@@ -545,7 +545,12 @@ int test_save_opus2ogg() {
 			op.bytes = nbBytes;
 			op.b_o_s = 0;
 			op.e_o_s = is_eos;
+			// playable with VLC, but not in window default player
 			op.granulepos = granule_position + 3;
+
+			// playable with default window player, but not work in VLC
+			//op.granulepos = 0; // 
+			
 			op.packetno = pkt_cnt++;
 
 			granule_position += 960;
